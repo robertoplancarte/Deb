@@ -41,7 +41,7 @@ Writes the JSON"s source to a file named after the JSON"s attempt_id, compiles i
 If Compiler couldn"t compile the attempt it returns a request to port 3000 with the following JSON:
 
 ```json
-{ attempt_id:json.attempt_id,
+{ "attempt_id":json.attempt_id,
   "eror":error,
   "message":"#{json.attempt_id} didn"t compile"
 }
