@@ -25,7 +25,7 @@ this is what Deb expects in the JSON:
 ```json
 { "id":i,
   "ext":"c",
-  "compare":true,
+  "return_type":0,
   "command": "gcc -x c -o %s %s.c",
   "callback_url":"attempts/1/cases/1/results"
   "source":"\"#include<stdio.h>\\n\\nint main()\\n{\\n char string [256];\\n gets (string);\\n printf(\\\"%s\\\\n\\\",string);\\n return 0;\\n}\\n\"",
@@ -47,6 +47,10 @@ If Compiler couldn't compile the attempt it returns a request to port 3000 with 
   "message":"#{json.attempt_id} didn't compile"
 }
 ```
+The return_type variable can take values from 0 to 2
+0. for attempts, returns ```json { id: 1, case: '0', result: true }  ``` to the "attempts/judge_results" url
+1. for problems, returns ```json { id: 1, case: '0', result: '2\n' } ``` to the "problems/judge_results" url
+2. for toolkit,  returns ```json { id: 1, case: '0', result: '2\n' } ``` to the "toolkit/judge_results" url
 
 Runner
 --------
