@@ -76,3 +76,8 @@ Set up
 ---------
 
 The directory where Deb compiles the programs into and runs them from can be changed by changing the "dir" variable of both.
+This sistem is ment to run inside a virtual box on the same server as the SEPAP sistem. The virtual box is created using Vagrant and this base box:
+https://s3-us-west-2.amazonaws.com/squishy.vagrant-boxes/precise64_squishy_2013-02-09.box
+You can add this box to the server under vagrant using
+```sh vagrant box add deb https://s3-us-west-2.amazonaws.com/squishy.vagrant-boxes/precise64_squishy_2013-02-09.box ```
+after the box has downloaded you can run vagrant ```sh init deb ``` then ```sh vagrant up ```
