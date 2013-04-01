@@ -1,7 +1,7 @@
 require 'net/http'
 require 'json'
 
-@host = 'localhost'
+@host = '192.168.33.10'
 @port = '8000'
 
 i=10

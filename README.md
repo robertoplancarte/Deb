@@ -23,10 +23,11 @@ Used to parse JSON requests, this dependency might be removed in later versions
 this is what Deb expects in the JSON:
 
 ```json
-{ "attempt_id":i,
-  "attempt_ext":"c",
+{ "id":i,
+  "ext":"c",
   "compare":true,
   "command": "gcc -x c -o %s %s.c",
+  "callback_url":"attempts/1/cases/1/results"
   "source":"\"#include<stdio.h>\\n\\nint main()\\n{\\n char string [256];\\n gets (string);\\n printf(\\\"%s\\\\n\\\",string);\\n return 0;\\n}\\n\"",
   "cases":{ "0":{ "input":"#{0+i}\n", "output" : "3\n"},
             "1":{ "input":"#{1+i}\n", "output" : "#{1+i}\n"},
