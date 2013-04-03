@@ -4,7 +4,7 @@ Judge, jury and executioner of the SEPAP sistem
 ------------------------------------------------
 
 
-This sistem is written in Nodejs, it listens for requests on port 8000 and responds to port 3000 of localhost
+This sistem is written in Nodejs, it listens for requests on port 6666 and responds to port 3000 of localhost
 
 It uses 4 modules to work:
 
@@ -38,44 +38,30 @@ this is what Deb expects in the JSON:
 
 Compiler
 ---------
-Writes the JSON"s source to a file named after the JSON"s attempt_id, compiles it and calls the runner module in it"s callback.
+Writes the JSON"s source to a file named after the JSON"s id, compiles it and calls the runner module in it"s callback.
 If Compiler couldn't compile the attempt it returns a request to port 3000 with the following JSON:
 
 ```json
-{ "attempt_id":json.attempt_id,
-  "eror":error,
-  "message":"#{json.attempt_id} didn't compile"
+{ "id":json.id,
+  "error":error,
+  "message":"#{json.id} didn't compile"
 }
 ```
-The return_type variable can take values from 0 to 2
-0. for attempts, returns ```json { id: 1, case: '0', result: true }  ``` to the "attempts/judge_results" url
-1. for problems, returns ```json { id: 1, case: '0', result: '2\n' } ``` to the "problems/judge_results" url
-2. for toolkit,  returns ```json { id: 1, case: '0', result: '2\n' } ``` to the "toolkit/judge_results" url
+
 
 Runner
 --------
 Runs the previously compiled attempt and returns one of 3 JSONs to port 3000:
 
-1. if there was a problem while runing it returns:
-```json
-{ "stderr":stderr,
-  "eror":error
-}
-```
-2. if JSON"s compare is equal to true:
-```json
-{ "id":id,
-  "case":key,
-  "result":result
-}
-```
-3. if JSON"s compare is equal to false:
-```json
-{ "id":id,
-  "case":key,
-  "result":stdout
-}
-```
+The return_type variable can take values from 0 to 2
+
+0. for attempts, returns ```json { id: 1, case: '0', result: true }  ``` to the "attempts/judge_results" url
+
+1. for problems, returns ```json { id: 1, case: '0', result: '2\n' } ``` to the "problems/judge_results" url
+
+2. for toolkit,  returns ```json { id: 1, case: '0', result: '2\n' } ``` to the "toolkit/judge_results" url
+
+
 
 Set up
 ---------
