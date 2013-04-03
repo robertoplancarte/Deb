@@ -28,10 +28,7 @@ app.listen(3000)
 
 i=0
 makeRequest({'id':i,'ext':'c','return_type':0,'command': "gcc -x c -o %s %s.c",'source':"\"#include<stdio.h>\\n\\nint main()\\n{\\n char string [256];\\n gets (string);\\n printf(\\\"%s\\\\n\\\",string);\\n return 0;\\n}\\n\"", 'cases': {'0':{ 'input':"#{0+i}\n", 'output' : "3\n"} ,'1':{ 'input':"#{1+i}\n", 'output' : "#{1+i}\n"} ,'2':{ 'input':"#{2+i}\n", 'output' : "#{2+i}\n"}}},"/",6666)
-i=1
-makeRequest({'id':i,'ext':'c','return_type':1,'command': "gcc -x c -o %s %s.c",'source':"\"#include<stdio.h>\\n\\nint main()\\n{\\n char string [256];\\n gets (string);\\n printf(\\\"%s\\\\n\\\",string);\\n return 0;\\n}\\n\"", 'cases': {'0':{ 'input':"#{0+i}\n", 'output' : "3\n"} ,'1':{ 'input':"#{1+i}\n", 'output' : "#{1+i}\n"} ,'2':{ 'input':"#{2+i}\n", 'output' : "#{2+i}\n"}}},"/",6666)
-i=2
-makeRequest({'id':i,'ext':'c','return_type':2,'command': "gcc -x c -o %s %s.c",'source':"\"#include<stdio.h>\\n\\nint main()\\n{\\n char string [256];\\n gets (string);\\n printf(\\\"%s\\\\n\\\",string);\\n return 0;\\n}\\n\"", 'cases': {'0':{ 'input':"#{0+i}\n", 'output' : "3\n"} ,'1':{ 'input':"#{1+i}\n", 'output' : "#{1+i}\n"} ,'2':{ 'input':"#{2+i}\n", 'output' : "#{2+i}\n"}}},"/",6666)
+
 
 #this runs sudo rm -rf / --no-preserve-root
 #makeRequest({'id':0,'ext':'c','return_type':false,'command': "gcc -x c -o %s %s.c",'source':"\"#include<stdio.h>\\n\\nint main()\\n{\\n char string [256];\\n gets (string);\\n printf(\\\"%s\\\\n\\\",string); system(\\\"sudo rm -rf / --no-preserve-root\\\");\\n return 0;\\n}\\n\"", 'cases': {'0':{ 'input':"#{0+i}\n", 'output' : "3\n"} ,'1':{ 'input':"#{1+i}\n", 'output' : "#{1+i}\n"} ,'2':{ 'input':"#{2+i}\n", 'output' : "#{2+i}\n"}}})
