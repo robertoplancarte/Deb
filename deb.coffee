@@ -6,6 +6,6 @@ runner = require('runner')
 app = express()
 app.use(express.bodyParser())
 app.post('/', (request, response) ->
-  compiler(request.body,runner)
+  compiler(request.body.params,runner)
   response.send(200))
 app.listen(6666)
