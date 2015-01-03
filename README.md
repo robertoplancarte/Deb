@@ -1,6 +1,6 @@
 Deb
 ====
-Judge, jury and executioner of the SEPAP sistem
+Judge, jury and executioner of the SEPAP system
 ------------------------------------------------
 
 
